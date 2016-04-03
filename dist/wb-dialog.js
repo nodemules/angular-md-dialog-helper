@@ -107,6 +107,7 @@
             return $mdDialog.show(
                 build(
                     alert,
+                    ev,
                     title,
                     content,
                     okLabel,
@@ -115,19 +116,7 @@
             );
         }
 
-        /**
-         * Display an alert dialog.
-         * Appending dialog to document.body to cover sidenav in docs app
-         * Modal dialogs should fully cover application
-         * to prevent interaction outside of dialog.
-         * @param  {Event} ev - The event object.
-         * @param  {string} title - The title of the dialog.
-         * @param  {string} content - The text of the dialog.
-         * @param  {string} okLabel - Label for 'OK' button.
-         * @param  {string} cancelLabel - Label for 'Cancel' button.
-         * @param  {string} ariaLabel [description]
-         * @return {void}
-         */
+
         function showConfirm(ev, title, content, okLabel, cancelLabel, ariaLabel) {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.confirm()
@@ -136,6 +125,7 @@
             return $mdDialog.show(
                 build(
                     confirm,
+                    ev,
                     title,
                     content,
                     okLabel,
@@ -150,7 +140,7 @@
 
         function showAdvanced(ev) {
             var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && customFullscreen;
-            return $mdDialog.show({
+            $mdDialog.show({
                     controller: 'DialogController',
                     controllerAs: 'vm',
                     templateUrl: '/views/app/dialog/dialog.html',
