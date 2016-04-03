@@ -87,9 +87,9 @@
                     ariaLabel
                 )
             ).then(function() {
-                // Ok clicked
+                return true;
             }, function() {
-                // Cancel clicked
+                return false;
             });
         }
 
