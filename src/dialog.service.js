@@ -62,6 +62,7 @@
             return $mdDialog.show(
                 build(
                     alert,
+                    ev,
                     title,
                     content,
                     okLabel,
@@ -79,6 +80,7 @@
             return $mdDialog.show(
                 build(
                     confirm,
+                    ev,
                     title,
                     content,
                     okLabel,
