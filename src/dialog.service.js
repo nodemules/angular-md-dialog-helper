@@ -15,6 +15,11 @@
             ariaLabel: 'Alert Dialog Demo',
             okLabel: 'Ok',
         };
+        var advancedDefaults = {
+            controller: 'DialogController',
+            templateUrl: '../../views/dialog.html',
+            clickOutsideToClose: true,
+        };
         var customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
         var service = {
@@ -39,6 +44,23 @@
                 .textContent(content)
                 .ariaLabel(ariaLabel)
                 .ok(okLabel);
+        }
+        
+        function buildAdvanced(ev, controller, templateUrl, clickOutsideToClose) {
+            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && customFullscreen;
+            controller = controller || advancedDefaults.title;
+            templateUrl = templateUrl || advancedDefaults.templateUrl;
+            clickOutsideToClose = clickOutsideToClose || advancedDefaults.clickOutsideToClose;
+            
+            return {
+                controller: controller,
+                controllerAs: 'vm',
+                templateUrl: templateUrl,
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: clickOutsideToClose,
+                fullscreen: useFullScreen
+            };
         }
 
         /**
@@ -71,7 +93,6 @@
             );
         }
 
-
         function showConfirm(ev, title, content, okLabel, cancelLabel, ariaLabel) {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.confirm()
@@ -93,21 +114,16 @@
             });
         }
 
-        function showAdvanced(ev) {
-            var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && customFullscreen;
-            $mdDialog.show({
-                    controller: 'DialogController',
-                    controllerAs: 'vm',
-                    templateUrl: '/views/app/dialog/dialog.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true,
-                    fullscreen: useFullScreen
-                })
-                .then(function(answer) {
-                    status = 'You said the information was "' + answer + '".';
+        function showAdvanced(ev, controller, templateUrl, clickOutsideToClose) {
+            $mdDialog.show(buildAdvanced(
+                ev,
+                controller,
+                templateUrl,
+                clickOutsideToClose
+            )).then(function(answer) {
+                    return answer;
                 }, function() {
-                    status = 'You cancelled the dialog.';
+                    return false;
                 });
         }
 
