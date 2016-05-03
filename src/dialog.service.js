@@ -38,20 +38,25 @@
             ariaLabel = ariaLabel || defaults.ariaLabel;
             okLabel = okLabel || defaults.okLabel;
 
-            return dialog
-                .targetEvent(ev)
+            var modalDialog = dialog
                 .title(title)
                 .textContent(content)
                 .ariaLabel(ariaLabel)
                 .ok(okLabel);
+
+            if (ev) {
+                modalDialog.targetEvent(ev) 
+            }
+
+            return modalDialog;
         }
-        
+
         function buildAdvanced(ev, controller, templateUrl, clickOutsideToClose) {
             var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && customFullscreen;
             controller = controller || advancedDefaults.title;
             templateUrl = templateUrl || advancedDefaults.templateUrl;
             clickOutsideToClose = clickOutsideToClose || advancedDefaults.clickOutsideToClose;
-            
+
             return {
                 controller: controller,
                 controllerAs: 'vm',
