@@ -1,35 +1,35 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('wb-dialog-helper')
-        .controller('DialogController', DialogController);
+  angular
+    .module('mules-md-dialog-helper')
+    .controller('DialogController', DialogController);
 
-    DialogController.$inject = ['$mdDialog'];
+  DialogController.$inject = ['$mdDialog'];
 
-    /* @ngInject */
-    function DialogController($mdDialog) {
-        var vm = this;
-        vm.hide = hide;
-        vm.cancel = cancel;
-        vm.answer = answer;
+  /* @ngInject */
+  function DialogController($mdDialog) {
+    var vm = this;
+    vm.hide = hide;
+    vm.cancel = cancel;
+    vm.answer = answer;
 
-        activate();
+    activate();
 
-        function activate() {
-            console.log('DialogController activated!');
-        }
+    function activate() {
 
-        function hide() {
-            $mdDialog.hide();
-        }
-
-        function cancel() {
-            $mdDialog.cancel();
-        }
-
-        function answer(answer) {
-            $mdDialog.hide(answer);
-        }
     }
+
+    function hide() {
+      $mdDialog.hide();
+    }
+
+    function cancel() {
+      $mdDialog.cancel();
+    }
+
+    function answer(answer) {
+      $mdDialog.hide(answer);
+    }
+  }
 })();

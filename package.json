@@ -1,5 +1,5 @@
 {
-  "name": "angular-md-dialog-helper",
+  "name": "mules-md-dialog-helper",
   "version": "0.1.0",
   "description": "A helper service for Angular Material Dialog service.",
   "main": "index.js",
@@ -8,23 +8,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wboyz/angular-md-dialog-helper.git"
+    "url": "git+https://github.com/nodemules/mules-md-dialog-helper.git"
   },
   "keywords": [
     "angular",
     "material",
     "toast"
   ],
-  "author": "Verebelyi Csaba <csaba.verebelyi@gmail.com> (https://github.com/rannien)",
+  "author": [
+    "Jay Reed <johngreedjr@gmail.com> (https://github.com/staticsound)",
+    "Brent Haertlein <brenthaertlein@gmail.com> (https://github.com/probablecohort)"
+  ],
   "contributors": [
-    "verebelyicsaba <csaba.verebelyi@gmail.com> (https://github.com/rannien)",
-    "verebelyibertalan <bertalan.verebelyi@gmail.com> (https://github.com/nalatreb)"
+    "Jay Reed <johngreedjr@gmail.com> (https://github.com/staticsound)",
+    "Brent Haertlein <brenthaertlein@gmail.com> (https://github.com/probablecohort)"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wboyz/angular-md-dialog-helper/issues"
+    "url": "https://github.com/nodemules/mules-md-dialog-helper/issues"
   },
-  "homepage": "https://github.com/wboyz/angular-md-dialog-helper#readme",
+  "homepage": "https://github.com/nodemules/mules-md-dialog-helper#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0"

@@ -2,6 +2,6 @@
     'use strict';
 
     angular.module('example', [
-        'wb-dialog-helper'
+        'mules-md-dialog-helper'
     ]);
 })();

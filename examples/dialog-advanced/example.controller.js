@@ -1,23 +1,29 @@
 (function() {
-'use strict';
+  'use strict';
 
-    angular
-        .module('example')
-        .controller('ExampleController', ExampleController);
+  angular
+    .module('example')
+    .controller('ExampleController', ExampleController);
 
-    ExampleController.$inject = ['dialogFactory'];
-    function ExampleController(dialogFactory) {
-        var vm = this;
-        vm.showAdvanced = showAdvanced;
-        
-        activate();
+  ExampleController.$inject = ['dialogFactory'];
 
-        ////////////////
+  function ExampleController(dialogFactory) {
+    var vm = this;
+    vm.showAdvanced = showAdvanced;
+    vm.warnConfirm = warnConfirm;
 
-        function activate() { }
-        
-        function showAdvanced(event) {
-            dialogFactory.showAdvanced(event, 'ExampleDialogController', '../../views/dialog.html', true);
-        }
+    activate();
+
+    ////////////////
+
+    function activate() {}
+
+    function showAdvanced(event) {
+      dialogFactory.showAdvanced(event, 'ExampleDialogController', '../../views/dialog.html', true);
     }
+
+    function warnConfirm() {
+      dialogFactory.warnConfirm('Are you sure about this?');
+    }
+  }
 })();

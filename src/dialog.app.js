@@ -1,8 +1,8 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('wb-dialog-helper', [
-            'ngMaterial'
-        ]);
+  angular
+    .module('mules-md-dialog-helper', [
+      'ngMaterial'
+    ]);
 })();

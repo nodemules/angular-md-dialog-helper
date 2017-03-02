@@ -1,11 +1,11 @@
 {
-  "name": "angular-md-dialog-helper",
+  "name": "mules-md-dialog-helper",
   "authors": [
-    "verebelyicsaba <csaba.verebelyi@gmail.com>",
-    "verebelyibertalan <bertalan.verebelyi@gmail.com>"
+    "brenthaertlein <brenthaertlein@gmail.com>",
+    "jayreed <johngreedjr@gmail.com>"
   ],
   "description": "A wrapper service for Angular Material Dialog service.",
-  "main": "dist/wb-dialog.js",
+  "main": "dist/mules-md-dialog-helper.js",
   "moduleType": [],
   "keywords": [
     "angular",
@@ -22,6 +22,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "^1.0.6"
+    "angular-material": "^1.1.3"
   }
 }

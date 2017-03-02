@@ -2,9 +2,9 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 
 gulp.task('scripts', function() {
-    return gulp.src('./src/*.js')
-        .pipe(concat('wb-dialog.js'))
-        .pipe(gulp.dest('./dist/'));
+  return gulp.src('./src/*.js')
+    .pipe(concat('mules-md-dialog-helper.js'))
+    .pipe(gulp.dest('./dist/'));
 });
 
 // The default task (called when you run `gulp` from cli)
